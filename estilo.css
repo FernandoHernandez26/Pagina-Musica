@@ -1,3 +1,29 @@
+/* Menú rápido junto al logo */
+.menu-rapido {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-left: 18px;
+}
+
+.menu-rapido-link {
+  background: #f5e6cc;
+  color: #632B21;
+  font-family: 'Lobster Two', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 7px 18px;
+  border-radius: 22px;
+  text-decoration: none;
+  border: 2px solid #e2c7a1;
+  transition: 0.2s;
+}
+
+.menu-rapido-link:hover {
+  background: #632B21;
+  color: #f5e6cc;
+  box-shadow: 0 4px 16px rgba(44,19,14,0.16);
+}
 *   {
     margin: 0;
     padding: 0;
@@ -12,21 +38,27 @@ body {
     }
 
     
-    header {
-      background: linear-gradient(to bottom,#2C130E );
-      padding: 20px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-    }
+    header{
+  background: #2C130E;
+  border-bottom: 4px solid rgba(139,75,51,0.12);
+  box-shadow: var(--card-shadow);
+  padding: 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
 
-    .Logo {
-      width: 8%;
-      border-radius: 15%;
-      margin-left: 30px;
-    }
+  .Logo{
+  width: 8%;
+  border-radius: 12%;
+  margin-left: 30px;
+  background: linear-gradient(#fff8f2,#fff2e6);
+  padding: 6px;
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
 
     .Buscar-contenido {
       flex: 1;
@@ -54,21 +86,23 @@ body {
       margin-left: 55%;
     }
 
-    .Menu-Boton {
-      justify-content: center;
-      background: #3F3F3A;
-      padding: 15px 55px;
-      font-size: 160%;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: all 0.2s;
-      font-family: 'Lobster Two', cursive;
-    }
+    .Menu-Boton{
+  justify-content: center;
+  background: #3F3F3A;
+  font-family: 'Lobster Two', cursive;
+  padding: 12px 42px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+} 
 
-    .Menu-Boton:hover {
-      background: #632B21;
-    }
+    .Menu-Boton:hover{
+  background: linear-gradient(180deg, rgba(139,75,51,0.08), rgba(139,75,51,0.12));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 
     .Bajar-Menu {
       position: absolute;
@@ -166,9 +200,158 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+      letter-spacing: 1px;
+    } 
+
+      .galeria-imagenes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;           /* espacio entre imágenes */
+  margin-bottom: 18px;  /* espacio entre filas */
+  justify-content: center;
+}
+
+.fila .gallery-item {
+  flex: 0 1 280px;      /* ancho fijo aproximado para cada tarjeta */
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fila .gallery-item img {
+  width: 100%;
+  max-width: 280px;     /* tamaño fijo máximo */
+  aspect-ratio: 1 / 1;  /* fuerza proporción cuadrada idéntica */
+  object-fit: cover;    /* recorta para que todas coincidan */
+  border-radius: 8px;
+  border: 4px solid rgba(255,255,255,0.55);
+  filter: sepia(0.18) saturate(0.95);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: transform .28s ease, filter .28s ease, box-shadow .28s ease;
+}
+
+.fila .gallery-item:hover img {
+  transform: translateY(-4px) scale(1.04);
+  filter: sepia(0.25) saturate(1.05) contrast(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+}
+
+.fila .gallery-item figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+  line-height: 1.2;
+  font-style: italic;
+  font-variant: small-caps;
+  opacity: .95;
+}
 
 
+.slider-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slides {
+  display: flex;
+  width: 400%;           /* 100% × cantidad de slides */
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slide {
+  flex: 0 0 25%;         /* 100% / 4 = 25% */
+  height: 340px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Controles (flechas) - ocultadas por petición del usuario */
+.controls{ display: none !important; }
+
+.arrow {
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: white;
+  text-shadow: 0 0 10px #0008;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  background: rgba(0,0,0,0.25);
+}
+
+.arrow.prev { 
+  order: -1;
+ }
+
+.arrow.next { 
+  order: 1; 
+}
+
+/* Movimiento según radio seleccionado */
+#slide1:checked ~ .slides { transform: translateX(  0%); }
+#slide2:checked ~ .slides { transform: translateX(-25%); }
+#slide3:checked ~ .slides { transform: translateX(-50%); }
+#slide4:checked ~ .slides { transform: translateX(-75%); }
+
+/* Ocultar flecha izquierda en la primera imagen */
+#slide1:checked ~ .controls .prev { opacity: 0; pointer-events: none; }
+
+/* Ocultar flecha derecha en la última imagen */
+#slide4:checked ~ .controls .next { opacity: 0; pointer-events: none; }
+
+
+
+
+
+
+
+
+
+
+/* Versión móvil (cuando la pantalla sea pequeña) */
+@media (max-width: 768px) {
+  .fila {
+    flex-direction: column;   /* pasa a una sola columna */
+    gap: 12px;
+  }
+  
+  .fila .gallery-item {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .fila .gallery-item img {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1; /* mantiene forma cuadrada en móvil */
+    object-fit: cover;
+  }
+
+}
     @media (max-width: 700px) {
       .imagen-texto {
         flex-direction: column;
