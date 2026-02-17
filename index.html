@@ -5,32 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VinCass</title>
     <link rel="stylesheet" href="estilo.css">
-    <link rel="icon" href="Imagenes/Icono.ico">
+    <link rel="icon" href="Imagenes/Icono2.ico">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>  
-
+<a href="index.html">
   <img class="Logo" src="Imagenes/Logo.png" alt="Logo VinCass" width="200" height="100">
+  </a>
   <nav class="menu-rapido">
     <a href="#Podcast" class="menu-rapido-link">Spotify </a>
     <a href="#Podcast" class="menu-rapido-link">Podcast </a>
     <a href="#Top" class="menu-rapido-link">Top</a>
   </nav>
+  
   <div class="Buscar-contenido">
-  <input type="search" class="Buscar-input" placeholder="..."  autocomplete="off">
-  </div>
+    <form onsubmit="buscar(); return false;" class="Buscar-contenido">
+        <input type="search" id="busqueda" class="Buscar-input" placeholder="..." autocomplete="off">
+    </form>
+</div>
 
   <div class="Menu-Contenido">
        <button class="Menu-Boton">MENU</button>
   <div class="Bajar-Menu">
-      <a href="#An70" class="Bajar-Item">Años 70</a>
-      <a href="#An80" class="Bajar-Item">Años 80</a>
-      <a href="#An90" class="Bajar-Item">Años 90</a>
-      <a href="#An2000" class="Bajar-Item">Años 2000</a>
-      <a href="#Top" class="Bajar-Item">Top</a>
-      <a href="#Podcast" class="Bajar-Item">Podcast</a>
+      <a href="An70.html" class="Bajar-Item">Años 70</a>
+      <a href="An80.html" class="Bajar-Item">Años 80</a>
+      <a href="An90.html" class="Bajar-Item">Años 90</a>
+      <a href="An2000.html" class="Bajar-Item">Años 2000</a>
+      <a href="Top.html" class="Bajar-Item">Top</a>
+      <a href="Podcast.html" class="Bajar-Item">Podcast</a>
     </div>
 
 
@@ -47,7 +51,9 @@
   <!-- Primera fila: 3 imágenes -->
   <div class="fila">
     <figure class="gallery-item">
+      <a href="An70.html">
       <img src="Imagenes/Queen.jpg" alt="Queen">
+      </a>
       <figcaption>Queen — Rock clásico</figcaption>
     </figure>
     <figure class="gallery-item">
@@ -63,7 +69,7 @@
   <!-- Segunda fila: otras 3 imágenes -->
   <div class="fila">
     <figure class="gallery-item">
-      <img src="Imagenes/link.jpg" alt="Link">
+      <img src="Imagenes/Linkin.jpg" alt="Link">
       <figcaption>Link — Rock/Alternativo</figcaption>
     </figure>
     <figure class="gallery-item">
@@ -109,5 +115,41 @@
 
 
   </main>
+
+
+
+
+  <script>
+function buscar() {
+    let texto = document.getElementById("busqueda").value.toLowerCase();
+
+    if (texto.includes("70")) {
+        window.location.href = "An70.html";
+    } 
+    else if (texto.includes("80")) {
+        window.location.href = "An80.html";
+    }
+    else if (texto.includes("90")) {
+        window.location.href = "An90.html";
+    }
+    else if (texto.includes("2000")) {
+        window.location.href = "An2000.html";
+    }
+    else if (texto.includes("Podcast")) {
+         window.location.href = "Podcast.html";
+    }
+    else if (texto.includes("Top")) {
+        window.location.href = "Top.html";
+    }
+    else if (texto.includes("Musica")) {
+        window.location.href = "index.html";
+    }
+    else {
+        alert("Eso no existe, Jajajaja Saludos");
+    }
+}
+</script>
+
+
 </body>
 </html>

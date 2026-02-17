@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VinCass - Años 70</title>
+    <link rel="stylesheet" href="estilo.css">
+     <link rel="icon" href="Imagenes/Icono2.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+        <img class="Logo" src="Imagenes/Logo.png" alt="Logo VinCass" width="200" height="100">
+        </a>
+        <nav class="menu-rapido">
+            <a href="#" class="menu-rapido-link">Spotify</a>
+            <a href="#" class="menu-rapido-link">Podcast</a>
+            <a href="#" class="menu-rapido-link">Top</a>
+        </nav>
+<div class="links-busqueda">
+    <a href="An70.html">Años 70</a>
+    <a href="An80.html">Años 80</a>
+    <a href="An90.html">Años 90</a>
+</div>
+
+
+         <div class="Buscar-contenido">
+    <form onsubmit="buscar(); return false;" class="Buscar-contenido">
+        <input type="search" id="busqueda" class="Buscar-input" placeholder="..." autocomplete="off">
+    </form>
+</div>
+
+        <div class="Menu-Contenido">
+            <button class="Menu-Boton">MENU</button>
+            <div class="Bajar-Menu">
+      <a href="An70.html" class="Bajar-Item">Años 70</a>
+      <a href="An80.html" class="Bajar-Item">Años 80</a>
+      <a href="An90.html" class="Bajar-Item">Años 90</a>
+      <a href="An2000.html" class="Bajar-Item">Años 2000</a>
+      <a href="Top.html" class="Bajar-Item">Top</a>
+      <a href="Podcast.html" class="Bajar-Item">Podcast</a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <section class="barra">
+        <h1>AÑOS 70</h1>
+    </section>
+
+
+    <main class="galeria-imagenes">
+
+        <section class="imagen-texto">
+
+            <div class="descripcion">
+                <img src="Imagenes/Queen.jpg" class="track-img">
+                <h2>Queen</h2>
+                <p><em>Rock clásico británico</em></p>
+                <p>
+                    Queen fue una de las bandas más influyentes de los años 70,
+                    mezclando rock, ópera y teatralidad en sus presentaciones.
+                </p>
+            </div>
+
+            <div class="playlist">
+    <h3>Playlist destacada</h3>
+
+    <div class="track">
+        <span>Bohemian Rhapsody — 1975</span>
+        <audio controls>
+            <source src="Audio/Queen/Queen – Bohemian Rhapsody (Official Video Remastered) [fJ9rUzIMcZQ].mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="track">
+        <span>Somebody to Love — 1976</span>
+        <audio controls>
+            <source src="audios/somebody.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="track">
+        <span>We Will Rock You — 1977</span>
+        <audio controls>
+            <source src="audios/rockyou.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="track">
+        <span>We Are the Champions — 1977</span>
+        <audio controls>
+            <source src="audios/champions.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="track">
+        <span>Don’t Stop Me Now — 1978</span>
+        <audio controls>
+            <source src="audios/dontstop.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+        </section>
+    </main>
+
+     <script>
+function buscar() {
+    let texto = document.getElementById("busqueda").value.toLowerCase();
+
+    if (texto.includes("70")) {
+        window.location.href = "An70.html";
+    } 
+    else if (texto.includes("80")) {
+        window.location.href = "An80.html";
+    }
+    else if (texto.includes("90")) {
+        window.location.href = "An90.html";
+    }
+    else if (texto.includes("2000")) {
+        window.location.href = "An2000.html";
+    }
+    else if (texto.includes("Podcast")) {
+         window.location.href = "Podcast.html";
+    }
+    else if (texto.includes("Top")) {
+        window.location.href = "Top.html";
+    }
+    else if (texto.includes("Musica")) {
+        window.location.href = "index.html";
+    }
+    else {
+        alert("Eso no existe, Jajajaja Saludos");
+    }
+}
+</script>
+
+
+</body>
+</html>
