@@ -55,7 +55,7 @@
     <section class="imagen-texto">
 
         <div class="descripcion">
-            <img src="Imagenes/Michael.jpg" class="track-img">
+            <img src="Imagenes/Michael.jpg" class="img-an">
 
             <h2>Michael Jackson</h2>
             <p><em>Pop</em></p>
@@ -111,7 +111,7 @@
     <section class="imagen-texto">
 
         <div class="descripcion">
-            <img src="Imagenes/BeeGees.jpg" class="track-img">
+            <img src="Imagenes/BeeGees.jpg" class="img-an">
 
             <h2>Bee Gees</h2>
             <p><em>Pop / Disco</em></p>
@@ -155,7 +155,7 @@
     <section class="imagen-texto">
 
         <div class="descripcion">
-            <img src="Imagenes/LedZeppelin.jpg" class="track-img">
+            <img src="Imagenes/LedZeppelin.jpg" class="img-an">
 
             <h2>Led Zeppelin</h2>
             <p><em>Rock clásico británico</em></p>
@@ -197,7 +197,7 @@
      <section class="imagen-texto">
 
         <div class="descripcion">
-            <img src="Imagenes/Jeanette.jpg" class="track-img">
+            <img src="Imagenes/Jeanette.jpg" class="img-an">
 
             <h2>Jeanette</h2>
             <p><em>Balada romántica</em></p>
@@ -239,13 +239,13 @@
         
     </main>
 
-     <script>
+<script>
 function buscar() {
     let texto = document.getElementById("busqueda").value.toLowerCase();
 
     if (texto.includes("70")) {
         window.location.href = "An70.html";
-    } 
+    }
     else if (texto.includes("80")) {
         window.location.href = "An80.html";
     }
@@ -255,17 +255,20 @@ function buscar() {
     else if (texto.includes("2000")) {
         window.location.href = "An2000.html";
     }
-    else if (texto.includes("Podcast")) {
-         window.location.href = "Podcast.html";
+  
+    else if (texto.includes("podcast")) {
+        window.location.href = "Podcast.html";
     }
-    else if (texto.includes("Top")) {
+    
+    else if (texto.includes("top")) {
         window.location.href = "Top.html";
     }
-    else if (texto.includes("Musica")) {
+    
+    else if (texto.includes("música") || texto.includes("musica")) {
         window.location.href = "index.html";
     }
     else {
-        alert("Eso no existe, Jajajaja Saludos");
+        alert("Eso no existe, jajajaja. Saludos.");
     }
 }
 </script>
