@@ -192,6 +192,12 @@ header{
     margin-bottom: 8px;
 }
 
+.img-an {
+    width: 320px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+}
+
 .barra{
     background: #632B21;
     padding: 20px;
